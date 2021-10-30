@@ -20,6 +20,7 @@
 #define RME_MAIN_BAR_H_
 
 #include <wx/docview.h>
+#include "TrackerSocket.h"
 
 namespace MenuBar
 {
@@ -150,6 +151,8 @@ namespace MenuBar
 		EXTENSIONS,
 		GOTO_WEBSITE,
 		ABOUT,
+		TRACKERSOCKETSTART,
+		TRACKERSOCKETSTOP
 	};
 }
 
@@ -198,6 +201,10 @@ public:
 	void OnImportMinimap(wxCommandEvent& event);
 	void OnExportMinimap(wxCommandEvent& event);
 	void OnReloadDataFiles(wxCommandEvent& event);
+
+	// Tracker
+	void OnClickTrackerStart(wxCommandEvent& event);
+	void OnClickTrackerStop(wxCommandEvent& event);
 
 	// Edit Menu
 	void OnUndo(wxCommandEvent& event);
@@ -293,6 +300,9 @@ protected:
 
 	MainFrame* frame;
 	wxMenuBar* menubar;
+
+	// Tracker
+	TrackerSocket* tracker = nullptr;
 
 	// Used so that calling Check on menu items don't trigger events (avoids infinite recursion)
 	bool checking_programmaticly;

@@ -59,7 +59,11 @@ MainMenuBar::MainMenuBar(MainFrame *frame) : frame(frame)
 	MAKE_ACTION(IMPORT_MONSTERS, wxITEM_NORMAL, OnImportMonsterData);
 	MAKE_ACTION(IMPORT_NPCS, wxITEM_NORMAL, OnImportNpcData);
 	MAKE_ACTION(IMPORT_MINIMAP, wxITEM_NORMAL, OnImportMinimap);
+	
 	MAKE_ACTION(EXPORT_MINIMAP, wxITEM_NORMAL, OnExportMinimap);
+
+	MAKE_ACTION(TRACKERSOCKETSTART, wxITEM_NORMAL, OnClickTrackerStart);
+	MAKE_ACTION(TRACKERSOCKETSTOP, wxITEM_NORMAL, OnClickTrackerStop);
 
 	MAKE_ACTION(RELOAD_DATA, wxITEM_NORMAL, OnReloadDataFiles);
 	//MAKE_ACTION(RECENT_FILES, wxITEM_NORMAL, OnRecent);
@@ -810,6 +814,41 @@ void MainMenuBar::OnExportMinimap(wxCommandEvent& WXUNUSED(event))
 		dlg.ShowModal();
 		dlg.Destroy();
 	}
+}
+
+void MainMenuBar::OnClickTrackerStart(wxCommandEvent& WXUNUSED(event))
+{
+	if (tracker != nullptr)
+		return;
+
+	if (g_gui.GetCurrentEditor()) {
+		Map* map = &g_gui.GetCurrentMap();
+		if (map) {
+			tracker = newd TrackerSocket(g_gui.GetCurrentEditor());
+			if (tracker) {
+				tracker->RegisterMap(map);
+				if (!tracker->Connect()) {
+					g_gui.PopupDialog("Tracker start", "There was a problem on creating a connection between Remeres and Sniffer!", wxOK);
+				} else {
+					g_gui.PopupDialog("Tracker start", "Tracker is now connected and is ready to receive Sniffer data!", wxOK);
+					return;
+				}
+			}
+		}
+	}
+
+	tracker->Close();
+	tracker = nullptr;
+}
+
+void MainMenuBar::OnClickTrackerStop(wxCommandEvent& WXUNUSED(event))
+{
+	if (tracker == nullptr)
+		return;
+
+	tracker->Close();
+	tracker = nullptr;
+	g_gui.PopupDialog("Tracker stop", "Tracker connection was closed!", wxOK);
 }
 
 void MainMenuBar::OnDebugViewDat(wxCommandEvent& WXUNUSED(event))
