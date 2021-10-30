@@ -1,3 +1,11 @@
+Disclaimer
+=============
+This remeres edited version is still a work in progress and may have bugs. The tracker feature is made to work together with my [Sniffer](https://github.com/marcosvf132/Sniffer)
+
+Tracker
+=============
+After initializing the Sniffer and click 'start tracker' on Remeres first and 'tracker' on Sniffer program, Remeres is ready to receive tracked areas and is waiting for the login on client and new incoming areas when walking or teleporting. The tracked information is pushed by clientID from the Sniffer, so there is no conflict of .otb or .dat.
+
 What is this?
 =============
 
