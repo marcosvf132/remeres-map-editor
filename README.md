@@ -6,39 +6,6 @@ Tracker
 =============
 After initializing the Sniffer and click 'start tracker' on Remeres first and 'tracker' on Sniffer program, Remeres is ready to receive tracked areas and is waiting for the login on client and new incoming areas when walking or teleporting. The tracked information is pushed by clientID from the Sniffer, so there is no conflict of .otb or .dat.
 
-What is this?
-=============
-
-This is a map editor for OpenTibia, which is an open source implementation of the MMORPG Tibia (which can be found at [tibia.com](http://tibia.com)), the official website is [remeresmapeditor.com](http://remeresmapeditor.com).
-You can find the project for hosting your own server at [the otserv project](https://github.com/opentibia/server).
-The main fansite for help, discussion and servers is [otland.net](http://otland.net).
-
-I want to contribute
-====================
-
-Contributions are very welcome, if you would like to make any changes, fork this project or request commit access.
-I (Remere) am liberal to allowing any and all help and my involvement will be restricted to reviewing changes for now.
-Please, if you would like to contribute anything, documentation, extensions or code speak up!
-
-Bugs
-======
-
-Have you found a bug? Please create an issue in our [bug tracker](https://github.com/hjnilsson/rme/issues)
-
-Other Applications
-==========
-
-* To host your MMORPG game server, you can use [The Forgotten Server](https://github.com/otland/forgottenserver).
-* To play your MMORPG game, you can use [OTClient](https://github.com/edubart/otclient)
-* To map your MMORPG game, you can use this map editor.
-
-Download
-========
-
-You can find official releases at [remeres mapeditor website](http://remeresmapeditor.com/marklar.php).
-
-If you are looking for the 3.X version, download it [here](https://github.com/hjnilsson/rme/releases/) until It is added to the official website.
-
 Compiling
 =========
 Required libraries:
@@ -52,3 +19,11 @@ Required libraries:
 [Compile on Arch Linux](https://github.com/hjnilsson/rme/wiki/Compiling-on-Arch-Linux)
 
 [Compile on macOS](https://github.com/hjnilsson/rme/wiki/Compiling-on-macOS)
+
+Screenshots
+=============
+
+![1](https://user-images.githubusercontent.com/66353315/139518631-918cb6cc-915f-440a-b8a4-83966ea4561c.png)
+![2](https://user-images.githubusercontent.com/66353315/139518633-0e06fd4b-69e3-4778-afe5-65aba86d77bb.png)
+![3](https://user-images.githubusercontent.com/66353315/139518634-8cbab0c7-abc7-43bf-9129-cf61474a8e5f.png)
+![4](https://user-images.githubusercontent.com/66353315/139518636-3ba01db1-8d2c-47f1-94f0-b71b7c4f6874.png)
